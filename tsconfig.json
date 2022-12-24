@@ -26,12 +26,34 @@
     // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
     "noFallthroughCasesInSwitch": true,
 
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "jsx": "react",
+    "alwaysStrict": true,
+    "sourceMap": true,
+
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "outDir": "./build",
+
     /* Modules */
     "module": "ESNext" /* Specify what module code is generated. */,
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
-    "baseUrl": "./src" /* Specify the base directory to resolve non-relative module names. */,
-    "paths": {} /* Specify a set of entries that re-map imports to additional lookup locations. */,
+    "baseUrl": "." /* Specify the base directory to resolve non-relative module names. */,
+    "paths": {
+      "@server/*": ["src/*"],
+      "@tests/*": ["__tests__/*"],
+      "@config/*": ["src/config/*"],
+      "@domain/*": ["src/domain/*"],
+      "@controller/*": ["src/controller/*"],
+      "@middleware/*": ["src/middleware/*"]
+    } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     "include": ["src"],
     "exclude": ["node_modules", "build"],
 
