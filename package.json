@@ -1,0 +1,9 @@
+{
+  "name": "express-typescript-template",
+  "version": "1.0.0",
+  "description": "Template for Express projects",
+  "main": "index.js",
+  "repository": "https://github.com/edouardmisset/express-typescript-template.git",
+  "author": "Edouard Misset <edouard.misset@intest.info>",
+  "license": "MIT"
+}
