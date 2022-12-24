@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/edouardmisset/express-typescript-template.git",
   "author": "Edouard Misset <edouard.misset@intest.info>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
 }
