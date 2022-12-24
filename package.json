@@ -7,6 +7,7 @@
   "author": "Edouard Misset <edouard.misset@intest.info>",
   "license": "MIT",
   "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
     "typescript": "^4.9.4"
   }
 }
