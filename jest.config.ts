@@ -1,4 +1,5 @@
 import path from 'path'
+const rootDirector = path.resolve(__dirname)
 
 export default {
   clearMocks: true,
@@ -21,12 +22,12 @@ export default {
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
-    '@server(.*)$': `<rootDir>/src$1`,
-    '@config(.*)$': `<rootDir>/src/config$1`,
-    '@tests(.*)$': `<rootDir>/__tests__$1`,
-    '@domain(.*)$': `<rootDir>/src/domain$1`,
-    '@controller(.*)$': `<rootDir>/src/controller$1`,
-    '@middleware(.*)$': `<rootDir>/src/middleware$1`,
+    '@server(.*)$': `${rootDirector}/src$1`,
+    '@config(.*)$': `${rootDirector}/src/config$1`,
+    '@tests(.*)$': `${rootDirector}/__tests__$1`,
+    '@domain(.*)$': `${rootDirector}/src/domain$1`,
+    '@controller(.*)$': `${rootDirector}/src/controller$1`,
+    '@middleware(.*)$': `${rootDirector}/src/middleware$1`,
   },
   reporters: [
     'default',
@@ -38,14 +39,14 @@ export default {
       },
     ],
   ],
-  rootDir: '<rootDir>',
-  roots: ['<rootDir>/src'],
-  setupFilesAfterEnv: [`<rootDir>/__tests__/setup.ts`],
+  rootDir: rootDirector,
+  roots: [rootDirector],
+  setupFilesAfterEnv: [`${rootDirector}/__tests__/setup.ts`],
   testPathIgnorePatterns: [
     '/node_modules/',
     '<rootDir>/build',
-    `<rootDir>/__tests__/fixtures`,
-    `<rootDir>/__tests__/setup.ts`,
+    `${rootDirector}/__tests__/fixtures`,
+    `${rootDirector}/__tests__/setup.ts`,
   ],
   transform: {
     '^.+\\.ts$': 'ts-jest',
