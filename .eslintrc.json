@@ -17,6 +17,6 @@
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     // Allow Prettier to throw errors via ESLint
-    "prettier/prettier": "error"
+    "prettier/prettier": "warn"
   }
 }
