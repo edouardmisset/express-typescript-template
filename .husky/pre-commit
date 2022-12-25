@@ -3,4 +3,4 @@
 
 # yarn enforce-branch-name '(bug|feat)/.+' --ignore '(main|master|dev|develop|staging)'
 yarn lint
-# yarn test
+yarn test
