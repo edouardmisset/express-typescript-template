@@ -1,5 +1,7 @@
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config()
 import path from 'path'
-const rootDirector = path.resolve(__dirname)
+const rootDirectory = path.resolve(__dirname)
 
 export default {
   clearMocks: true,
@@ -14,20 +16,15 @@ export default {
       statements: 80,
     },
   },
-  globals: {
-    'ts-jest': {
-      tsconfig: path.resolve(__dirname, 'tsconfig.json'),
-    },
-  },
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
-    '@server(.*)$': `${rootDirector}/src$1`,
-    '@config(.*)$': `${rootDirector}/src/config$1`,
-    '@tests(.*)$': `${rootDirector}/__tests__$1`,
-    '@domain(.*)$': `${rootDirector}/src/domain$1`,
-    '@controller(.*)$': `${rootDirector}/src/controller$1`,
-    '@middleware(.*)$': `${rootDirector}/src/middleware$1`,
+    '@server(.*)$': `${rootDirectory}/src$1`,
+    '@config(.*)$': `${rootDirectory}/src/config$1`,
+    '@tests(.*)$': `${rootDirectory}/__tests__$1`,
+    '@domain(.*)$': `${rootDirectory}/src/domain$1`,
+    '@controller(.*)$': `${rootDirectory}/src/controller$1`,
+    '@middleware(.*)$': `${rootDirectory}/src/middleware$1`,
   },
   reporters: [
     'default',
@@ -39,17 +36,17 @@ export default {
       },
     ],
   ],
-  rootDir: rootDirector,
-  roots: [rootDirector],
-  setupFilesAfterEnv: [`${rootDirector}/__tests__/setup.ts`],
+  rootDir: rootDirectory,
+  roots: [rootDirectory],
+  setupFilesAfterEnv: [`${rootDirectory}/__tests__/setup.ts`],
   testPathIgnorePatterns: [
     '/node_modules/',
     '<rootDir>/build',
-    `${rootDirector}/__tests__/fixtures`,
-    `${rootDirector}/__tests__/setup.ts`,
+    `${rootDirectory}/__tests__/fixtures`,
+    `${rootDirectory}/__tests__/setup.ts`,
   ],
   transform: {
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': ['ts-jest'],
   },
   testRegex: ['((/__tests__/.*)|(\\.|/)(test|spec))\\.tsx?$'],
 }
