@@ -17,6 +17,7 @@ const config: Config = {
       statements: 80,
     },
   },
+  errorOnDeprecated: true,
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
