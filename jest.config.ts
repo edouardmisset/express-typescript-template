@@ -1,9 +1,10 @@
 import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config()
+import type { Config } from 'jest'
 import path from 'path'
 const rootDirectory = path.resolve(__dirname)
 
-export default {
+const config: Config = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: 'coverage',
@@ -11,7 +12,7 @@ export default {
   coverageThreshold: {
     global: {
       branches: 70,
-      function: 80,
+      functions: 80,
       lines: 80,
       statements: 80,
     },
@@ -46,7 +47,9 @@ export default {
     `${rootDirectory}/__tests__/setup.ts`,
   ],
   transform: {
-    '^.+\\.ts$': ['ts-jest'],
+    '^.+\\.ts$': 'ts-jest',
   },
   testRegex: ['((/__tests__/.*)|(\\.|/)(test|spec))\\.tsx?$'],
 }
+
+export default config
